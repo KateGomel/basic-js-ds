@@ -30,22 +30,22 @@ class BinarySearchTree {
       this.rootNode = newNode; 
       return;
     } else {
-      this.addNode(this.rootNode, newNode);
+      this._addNode(this.rootNode, newNode);
     }
   }
 
-  addNode(node, newNode) {
+  _addNode(node, newNode) {
     if (newNode.data < node.data) {
       if (!node.left) {
         node.left = newNode;
       } else {
-        this.addNode(node.left, newNode);
+        this._addNode(node.left, newNode);
       }
     } else {
       if (!node.right) {
         node.right = newNode;
       } else {
-        this.addNode(node.right, newNode);
+        this._addNode(node.right, newNode);
       }
     }
   }
