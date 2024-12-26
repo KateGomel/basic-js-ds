@@ -27,7 +27,7 @@ class BinarySearchTree {
   add(data) {
     const newNode = new TreeNode(data);
     if (!this.rootNode) {
-      this.rootNode = newNode; 
+      this.rootNode = newNode;
       return;
     } else {
       this._addNode(this.rootNode, newNode);
@@ -51,7 +51,17 @@ class BinarySearchTree {
   }
 
   has(data) {
-    return this.find(data);
+    let currentNode = this.rootNode;
+    while (currentNode !== null) {
+      if (data < currentNode.data) {
+        currentNode = currentNode.left;
+      } else if (data > currentNode.data) {
+        currentNode = currentNode.right;
+      } else {
+        return true;
+      }
+    }
+    return false;
   }
 
   find(/* data */) {
